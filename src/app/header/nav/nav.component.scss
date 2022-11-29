@@ -1,0 +1,55 @@
+.container{
+    margin: auto 15px;
+    display: flex;
+
+    align-items: center;
+    &__logo{
+        flex: 1;
+    }
+    &__navbar{
+        flex: 2;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    .serach{
+        padding-left: 10px;
+    }
+
+    &__navItems{
+        flex: 1;
+    }
+    &__btn{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex: .75;
+    }
+    &__btn button {
+        border-radius: 50px;
+        padding: 10px;
+        background: linear-gradient(to right, #59f9b7, #66feea);
+        color: black;
+        width: 150px;
+    }
+
+    &__logo img{
+        width: 250px;
+        height: 100px;
+    }
+    
+    &__navbar input{
+       background-color: #1c1c1e;
+       height: 50px;
+       width: 100%;
+       border: none;
+       border-radius: 50px;
+    }
+
+    &__navItems ul{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        list-style: none;
+    }
+}

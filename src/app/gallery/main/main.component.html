@@ -1,0 +1,82 @@
+<ng-container *ngIf="clicked === false">
+    <div class="main" >
+        <div class="mainContent">
+            <div class="punkHighlight" >
+                <div class="punkContainer">
+                    <img class="selectedPunk" src="assets/preview.png" alt="selectedPunk img">
+                </div>
+            </div>
+            <div class="punkDetails">
+                <div class="lol">
+                    <div class="title">RAZE PUNK</div>
+                    <span class="itemNumber">.# 1</span>
+                </div>
+                <div class="owner">
+                    <div class="ownerImageContainer">
+                        <img src="assets/assets/eth.png" alt="">
+                    </div>
+        
+                    <div class="ownerDetails">
+                        <div class="ownerNameAndHandel">
+                            <div>
+                                0x9Eaf862f58af1b30f5e13afaecd3d01b40f35359f
+                            </div>
+                            <div class="ownerHandle">@Akash G G</div>
+                        </div>
+                        <div class="ownerLink">
+                            <img src="assets/assets/owner/instagram.png" alt="insta logo">
+                        </div>
+                        <div class="ownerLink">
+                            <img src="assets/assets/owner/twitter.png" alt="twitter logo">
+                        </div>
+                        <div class="ownerLink">
+                            <img src="assets/assets/owner/more.png" alt="owner Link">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+    </div>
+</ng-container>
+
+<ng-container *ngIf="clicked === true">
+    <div class="main" >
+        <div class="mainContent">
+            <div class="punkHighlight" >
+                <div class="punkContainer">
+                    <img class="selectedPunk" src ="{{getURL()}}" alt="selectedPunk" img>
+                </div>
+            </div>
+            <div class="punkDetails">
+                <div class="lol">
+                    <div class="title">{{getName()}}</div>
+                    <span class="itemNumber">.# {{nftId?.token_id}}</span>
+                </div>
+                <div class="owner">
+                    <div class="ownerImageContainer">
+                        <img src="assets/assets/eth.png" alt="">
+                    </div>
+        
+                    <div class="ownerDetails">
+                        <div class="ownerNameAndHandel">
+                            <div>{{nftId.owner_of}}</div>
+                            <div class="ownerHandle">@Hemanth G G</div>
+                        </div>
+                        <div class="ownerLink">
+                            <a href="https://www.instagram.com/hemanth_g_g/"></a>
+                            <img src="assets/assets/owner/instagram.png"  alt="insta logo">
+                        </div>
+                        <div class="ownerLink">
+                            <img src="assets/assets/owner/twitter.png" alt="twitter logo">
+                        </div>
+                        <div class="ownerLink">
+                            <img src="assets/assets/owner/more.png" alt="owner Link">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+    </div>
+</ng-container>
