@@ -15,6 +15,7 @@ import { MatIconModule } from '@angular/material/icon';
 import { LoginComponent } from './login/login.component';
 import { MainPageComponent } from './app/main-page/main-page.component';
 
+
 @NgModule({
   declarations: [
     AppComponent,

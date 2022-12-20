@@ -26,7 +26,6 @@ export class MainComponent implements OnInit,OnChanges {
     let info = JSON.parse(meta.metadata)
     return info.name
    
-    // return meta.metadata.name
   }
 
   ngOnInit(){
@@ -35,7 +34,7 @@ export class MainComponent implements OnInit,OnChanges {
   ngOnChanges(change: SimpleChanges) {
     if (change['nftId']) {
       this.nftId = change['nftId'].currentValue;
+      
     } 
-
   }
 }

@@ -1,5 +1,5 @@
 .main{
-    max-height: 70vh;    
+    max-height: 70vh; 
 }
 
 .mainContent{
@@ -26,12 +26,19 @@
     object-fit: contain;
     max-width: min(30vw, 40vh);
     max-height: 20vw;
+
+
+    img{
+        width: 200px;
+        height: 300px;
+    }
 }
 .punkDetails{
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     flex: 0.75;
+    text-transform: uppercase;
 }
 .lol{
     display: flex;
@@ -53,7 +60,7 @@
     align-items: center;
     justify-content: space-between;
     margin: 10px 0;
-    height: 50px;    
+    height: 50px; 
 }
 .owner>div{
     margin: 0 5px;
@@ -94,8 +101,10 @@
     width: 50px;
     border: 1px solid #fff;
     margin:  0 0 0 10px;
+    cursor:pointer;   
+
 }
-.ownerLink> img{
+.ownerLink> a img{
     height: 100%;
     width: 100%;
 }

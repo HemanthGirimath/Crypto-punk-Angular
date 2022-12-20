@@ -1,15 +1,5 @@
-import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
-import { environment } from 'src/environments/environment';
-
-
-export interface ResponseType {
-  total: number, 
-  page: number, 
-  page_size: number, 
-  cursor?: null, 
-  result: Array<any>
-}
+import { MoralisServicesService } from 'src/app/moralis-services.service';
 
 @Component({
   selector: 'app-nfts',
@@ -17,31 +7,13 @@ export interface ResponseType {
   styleUrls: ['./nfts.component.scss']
 })
 
-
-
 export class NftsComponent implements OnInit {
   nftData$:any =[];
   v = 0
   ItemClicked:any; 
   defaultView:boolean = false
-  api = environment.Moralis_api
-  walletaddress:string= '0x8b61FC3df7a5Dd1972f6187Fbc3cc374e9845D2b'
 
-  // 'https://deep-index.moralis.io/api/v2/0x8b61FC3df7a5Dd1972f6187Fbc3cc374e9845D2b/nft'
-  
-  constructor(private http:HttpClient) { }
-
-  //   getdata(){
-  //   return this.http.get<ResponseType>('https://deep-index.moralis.io/api/0x8b61FC3df7a5Dd1972f6187Fbc3cc374e9845D2b/v2/nft',
-  //   {headers:new HttpHeaders({accept: 'application/json','X-API-Key':this.api,format: 'decimal', normalizeMetadata: 'false'}),params:new HttpParams().set('chain','mumbai')});
-  // }
-
-   getdata(){
-    
-    return this.http.get<ResponseType>(`https://deep-index.moralis.io/api/v2/${this.walletaddress}/nft`,
-    {headers:new HttpHeaders({accept: 'application/json','X-API-Key':this.api,format: 'decimal', normalizeMetadata: 'false'}),params:new HttpParams().set('chain','mumbai')});
-    
-  }
+  constructor(private service:MoralisServicesService) { }
 
     getId(data:any){
     this.ItemClicked = data;
@@ -74,8 +46,8 @@ export class NftsComponent implements OnInit {
   }
   
   ngOnInit(): void {
-  this.getdata().pipe().subscribe(data=>this.nftData$ = data.result)
-  // this.getdata().pipe().subscribe(data=>console.log(data))
+    this.service.getwalletAddress();
+  this.service.getdata().subscribe(data=>this.nftData$ = data.result)
   }
 
 }
